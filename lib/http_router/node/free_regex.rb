@@ -20,7 +20,7 @@ class HttpRouter
           request.path = old_path
           request.extra_env.delete('router.regex_match')
           " << (use_named_captures? ?
-          "params.slice!(-match.names.size, match.names.size)" : ""
+          "request.params.slice!(-match.names.size, match.names.size)" : ""
           ) << "
         end"
       end
